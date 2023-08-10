@@ -1,17 +1,17 @@
-// problem1------------------------
+// // problem1------------------------
 
-// function cubeNumber(number) {
-//     if (typeof number === "number") {
-//         result = number ** 3;
-//         return result;
-//     } else {
-//         if (typeof number !== "number") {
-//             return "please provide a number";
-//         }
-//     }
-// }
+function cubeNumber(number) {
+    if (typeof number === "number") {
+        result = number ** 3;
+        return result;
+    } else {
+        if (typeof number !== "number") {
+            return "please provide a number";
+        }
+    }
+}
 
-// const cubeResult = cubeNumber(4);
+const cubeResult = cubeNumber(4);
 
 // problem2------------------------------
 
@@ -28,43 +28,62 @@ function matchFinder(String1, String2) {
 }
 const stringname = matchFinder("Peter Parker", "Pen");
 
-// problem3--------------------------------------
+// // problem3--------------------------------------
 
-// function sortMaker(arr) {
-//     if (arr.length !== 2) {
-//         return "please give me two numbers";
-//     }
+function sortMaker(arr) {
+    if (arr.length !== 2) {
+        return "please give me two numbers";
+    }
 
-//     if (arr[0] === arr[1]) {
-//         return "equal";
-//     }
+    if (arr[0] === arr[1]) {
+        return "equal";
+    }
 
-//     for (let i = 0; i < arr.length; i++) {
-//         if (typeof arr[i] !== "number" || arr[i] < 0) {
-//             return "Invalid Input";
-//         }
-//     }
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number" || arr[i] < 0) {
+            return "Invalid Input";
+        }
+    }
 
-//     return arr.sort((a, b) => b - a);
-// }
+    return arr.sort((a, b) => b - a);
+}
 
-// const dataList = sortMaker([4, -2]);
+const dataList = sortMaker([4, -2]);
 
-// problem4------------------
+// // problem4------------------
+
+function findAddress(obj) {
+    const properties = ["street", "house", "society"];
+    let output = [];
+
+    for (let i = 0; i < properties.length; i++) {
+        const property = properties[i];
+
+        if (obj.hasOwnProperty(property)) {
+            output.push(obj[property]);
+        } else {
+            output.push("__");
+        }
+    }
+
+    return output.join(",");
+}
+
+const address = findAddress({ street: 10 });
 
 // problem5----------------------------------
 
-// function canPay(arry, number) {
-//     if (arry.length === 0) {
-//         return "The array is empty";
-//     }
+function canPay(arry, number) {
+    if (arry.length === 0) {
+        return "The array is empty";
+    }
 
-//     let total = 0;
-//     for (let i = 0; i < arry.length; i++) {
-//         total += arry[i];
-//     }
+    let total = 0;
+    for (let i = 0; i < arry.length; i++) {
+        total += arry[i];
+    }
 
-//     return total >= number;
-// }
+    return total >= number;
+}
 
-// const budget = canPay([1, 5, 5], 10);
+const budget = canPay([1, 5, 5], 10);
