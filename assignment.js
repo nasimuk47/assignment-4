@@ -2,7 +2,7 @@
 
 function cubeNumber(number) {
     if (typeof number === "number") {
-        result = number ** 3;
+        let result = number ** 3;
         return result;
     } else {
         if (typeof number !== "number") {
